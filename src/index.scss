@@ -1,0 +1,236 @@
+/*
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+/*  for color https://yeun.github.io/open-color/
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+*/
+
+// Breakpoints
+$bp-md: 62.5em; // 1000px
+$bp-sm: 37.5em; // 600px
+$bp-xsm: 25em; // 400px
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+
+  @media only screen and (max-width: $bp-sm) {
+    font-size: 75%;
+  }
+
+  @media only screen and (max-width: $bp-xsm) {
+    font-size: 50%;
+  }
+}
+
+body {
+  font-size: 1.4rem;
+  font-family: "Arial", sans-serif;
+  background-color: #000;
+
+  box-sizing: border-box;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  border: none;
+  background: #e50914;
+  color: #fff;
+  font-size: 1.2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in;
+  outline: none;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.45);
+  border-radius: 2px;
+
+  &--sm {
+    padding: 0.6rem 1.4rem;
+    align-self: center;
+  }
+
+  &--md {
+    padding: 0.8rem 1.6rem;
+    text-transform: uppercase;
+
+    @media only screen and (max-width: $bp-md) {
+      padding: 0.4rem 0.8rem;
+    }
+  }
+
+  &--lg {
+    margin-top: 2.4rem;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    padding: 1.6rem 2.4rem;
+    letter-spacing: 0.2rem;
+  }
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+.tabs {
+  &__list {
+    display: flex;
+    justify-content: center;
+
+    color: #999;
+    height: 12vh;
+    background-color: #141414;
+    text-align: center;
+    border-bottom: 1px solid rgba(153, 153, 153, 0.556);
+
+    @media only screen and (max-width: $bp-md) {
+      height: 8vh;
+    }
+
+    .tab {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      width: 24vw;
+      height: 100%;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: border 0.2s ease;
+
+      p {
+        @media only screen and (max-width: $bp-sm) {
+          display: none;
+        }
+      }
+
+      &__icon {
+        margin-bottom: 0.6rem;
+        fill: currentColor;
+        height: 3.2rem;
+        width: 3.2rem;
+      }
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+
+  &__content {
+    width: 72vw;
+    margin: 0.8rem auto 3.2rem;
+    padding: 3.6rem 0;
+
+    background-color: #000;
+    color: #999;
+
+    .content {
+      .text {
+        font-size: 1.6rem;
+        color: #fff;
+
+        @media only screen and (max-width: $bp-md) {
+          font-size: 1.4rem;
+        }
+      }
+
+      &--1 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+
+        @media only screen and (max-width: $bp-md) {
+          gap: 2.4rem;
+        }
+
+        @media only screen and (max-width: $bp-xsm) {
+          grid-template-columns: 1fr;
+        }
+
+        p {
+          margin-bottom: 1.2rem;
+        }
+
+        img {
+          width: 100%;
+        }
+      }
+
+      &--2 {
+        .content__header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 4.8rem;
+
+          .btn {
+            width: 35%;
+            font-size: 1rem;
+            padding: 0.8rem 4.8rem;
+
+            @media only screen and (max-width: $bp-md) {
+              width: 50%;
+            }
+          }
+        }
+
+        .content__body {
+          margin-top: 3.2rem;
+          display: flex;
+          gap: 1.8rem;
+          text-align: center;
+
+          @media only screen and (max-width: $bp-sm) {
+            flex-direction: column;
+          }
+
+          div {
+            img {
+              height: 15vw;
+
+              @media only screen and (max-width: $bp-sm) {
+                height: 35vw;
+              }
+            }
+
+            h3 {
+              font-size: 1.2rem;
+              color: #fff;
+              margin: 0.8rem 0 1.2rem;
+
+              @media only screen and (max-width: $bp-sm) {
+                margin: 0.4rem 0 0.6rem;
+              }
+            }
+
+            p {
+              font-size: 1rem;
+              line-height: 1.4;
+            }
+          }
+        }
+      }
+
+      &--3 {
+        text-align: center;
+        .btn {
+          margin: 1.2rem 0 1.6rem;
+        }
+      }
+    }
+  }
+}
+
+.tab.active {
+  border-bottom: 2px solid red;
+}

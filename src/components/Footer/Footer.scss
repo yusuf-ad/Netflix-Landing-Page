@@ -1,0 +1,29 @@
+.footer {
+  color: #999;
+  width: 72vw;
+  margin: 1.2rem auto;
+  font-size: 1.2rem;
+
+  div {
+    margin-top: 1.2rem;
+    margin-bottom: 1.6rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    div {
+      display: flex;
+      gap: 0.6rem;
+      flex-direction: column;
+
+      a {
+        font-size: 1.2rem;
+        text-decoration: none;
+        color: #999;
+
+        &:hover {
+          color: #888;
+        }
+      }
+    }
+  }
+}
